@@ -7,8 +7,8 @@ import select
 
 from select import EPOLLIN, EPOLLET, EPOLLPRI
 
-from OPi.constants import NONE, RISING, FALLING, BOTH
-from OPi import sysfs
+from LPi.constants import NONE, RISING, FALLING, BOTH
+from LPi import sysfs
 
 
 _threads = {}

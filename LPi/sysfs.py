@@ -3,7 +3,7 @@
 # See LICENSE.md for details.
 
 from contextlib import contextmanager
-from OPi.constants import HIGH, LOW, IN, OUT, \
+from LPi.constants import HIGH, LOW, IN, OUT, \
     NONE, RISING, FALLING, BOTH
 
 

@@ -5,18 +5,18 @@
 """
 Importing the module
 --------------------
-To import the OPi.GPIO module:
+To import the LPi.GPIO module:
 
 .. code:: python
 
-   import OPi.GPIO as GPIO
+   import LPi.GPIO as GPIO
 
 By doing it this way, you can refer to it as just GPIO through the rest of your
 script.
 
 Pin Numbering
 -------------
-Pins on Orange Pi Zero are named PxNN where x = A..Z and NN = 00..99. This
+Pins on Lichee Zero Pi Zero are named PxNN where x = A..Z and NN = 00..99. This
 implementation aims to paper over the cracks to make GPIO usage consistent
 across Raspberry Pi and Orange Pi. Quoting from the RPi.GPIO documentation:
 
@@ -36,7 +36,7 @@ across Raspberry Pi and Orange Pi. Quoting from the RPi.GPIO documentation:
 This library monkeys the original implementation (and the documentation, as you
 are about to find out), by adding a third numbering system that is SUNXI naming.
 
-.. image:: ../doc/images/OrangePi_Zero_Pinout_header.jpg
+.. image:: ../doc/images/Lichee_Zero_pinout.png
 
 Inputs
 ------
@@ -64,7 +64,7 @@ To get round this, we use a pull up or a pull down resistor. In this way, the
 default value of the input can be set. It is possible to have pull up/down
 resistors in hardware and using software. In hardware, a 10K resistor between
 the input channel and 3.3V (pull-up) or 0V (pull-down) is commonly used. The
-OPi.GPIO module allows you to configure the SOC to do this in software:
+LPi.GPIO module allows you to configure the SOC to do this in software:
 
 .. code:: python
 
@@ -110,7 +110,7 @@ there are two ways to get round this:
 
 Threaded Callbacks
 ^^^^^^^^^^^^^^^^^^
-OPi.GPIO manages a number of secondary threads for callback functions. This
+LPi.GPIO manages a number of secondary threads for callback functions. This
 means that callback functions can be run at the same time as your main program,
 in immediate response to an edge.
 
@@ -185,11 +185,11 @@ possible to stop them:
 
 Outputs
 -------
-1. First set up OPi.GPIO
+1. First set up LPi.GPIO
 
     .. code:: python
 
-       import OPi.GPIO as GPIO
+       import LPi.GPIO as GPIO
        GPIO.setmode(GPIO.BOARD)
        GPIO.setup(12, GPIO.OUT)
 
@@ -240,12 +240,12 @@ Methods
 
 import warnings
 
-from OPi.constants import IN, OUT
-from OPi.constants import LOW, HIGH                     # noqa: F401
-from OPi.constants import NONE, RISING, FALLING, BOTH   # noqa: F401
-from OPi.constants import BCM, BOARD, SUNXI
-from OPi.pin_mappings import get_gpio_pin
-from OPi import event, sysfs
+from LPi.constants import IN, OUT
+from LPi.constants import LOW, HIGH                     # noqa: F401
+from LPi.constants import NONE, RISING, FALLING, BOTH   # noqa: F401
+from LPi.constants import BCM, BOARD, SUNXI
+from LPi.pin_mappings import get_gpio_pin
+from LPi import event, sysfs
 
 _gpio_warnings = True
 _mode = None
@@ -540,9 +540,9 @@ def __wrap(callback, channel):
 def cleanup(channel=None):
     """
     At the end any program, it is good practice to clean up any resources you
-    might have used. This is no different with OPi.GPIO. By returning all
+    might have used. This is no different with LPi.GPIO. By returning all
     channels you have used back to inputs with no pull up/down, you can avoid
-    accidental damage to your Orange Pi by shorting out the pins. Note that
+    accidental damage to your Lichee Zero Pi by shorting out the pins. Note that
     this will only clean up GPIO channels that your script has used. Note that
     GPIO.cleanup() also clears the pin numbering system in use.
 
