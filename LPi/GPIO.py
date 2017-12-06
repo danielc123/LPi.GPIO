@@ -243,6 +243,7 @@ import warnings
 from LPi.constants import IN, OUT
 from LPi.constants import LOW, HIGH                     # noqa: F401
 from LPi.constants import NONE, RISING, FALLING, BOTH   # noqa: F401
+from LPi.constants import PUD_OFF, PUD_DOWN, PUD_UP
 from LPi.constants import BCM, BOARD, SUNXI
 from LPi.pin_mappings import get_gpio_pin
 from LPi import event, sysfs
