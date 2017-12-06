@@ -3,7 +3,7 @@
 # See LICENSE.md for details.
 
 import functools
-from OPi.constants import BOARD, BCM, SUNXI
+from LPi.constants import BOARD, BCM, SUNXI
 
 
 class _sunXi(object):

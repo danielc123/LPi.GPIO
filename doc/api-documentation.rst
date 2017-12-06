@@ -1,6 +1,6 @@
 API Documentation
 -----------------
-.. automodule:: OPi.GPIO
+.. automodule:: LPi.GPIO
     :members:
     :undoc-members:
     :show-inheritance:

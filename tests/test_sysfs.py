@@ -4,12 +4,12 @@
 # See LICENSE.rst for details.
 
 """
-Tests for the :py:mod:`OPi.sysfs` module.
+Tests for the :py:mod:`LPi.sysfs` module.
 """
 import pytest
 
-from OPi.sysfs import export, unexport, direction, input, output, edge
-from OPi.constants import IN, OUT, LOW, HIGH, NONE, RISING, FALLING, BOTH
+from LPi.sysfs import export, unexport, direction, input, output, edge
+from LPi.constants import IN, OUT, LOW, HIGH, NONE, RISING, FALLING, BOTH
 
 
 def test_export(fs):
